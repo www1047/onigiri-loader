@@ -15,6 +15,9 @@ takes everything back out cleanly when you switch mods off.
 - **Installs mods from archives** — `.zip` always works; `.7z` and `.rar` work
   if you have 7-Zip or WinRAR installed (both free). You can also add a single
   `.rpf` DLC pack.
+- **Installs NaturalVision Enhanced** — add an NVE archive and it places the
+  `onigiri` folder and core files exactly like any other mod, so NVE is a
+  first-class baseline rather than a separate manual install.
 - **Library with one-click on/off** — every mod sits in a list you can tick on
   and off, reorder, or remove. Ticking a mod installs its files; unticking
   removes them and restores whatever it replaced.
@@ -54,9 +57,9 @@ takes everything back out cleanly when you switch mods off.
 - **Not for GTA Online.** Single player only — online use risks a ban.
 - **Doesn't download mods.** No mod database, no links; you provide the
   archives from wherever you got them.
-- **Doesn't install or configure NaturalVision Enhanced.** NVE is the usual
-  baseline you install separately (or you use the stock-GTA V pathway of core
-  files plus the skeleton onigiri folder, which the loader creates for you).
+- **Doesn't run NVE's installer or configurator.** It installs NVE's files
+  from an archive (see above) but won't fetch NVE, run NVE's own setup, or
+  touch NVE's in-game settings.
 - **Doesn't use OpenIV, ever.** `.oiv` packages and the OpenIV support files
   (`openiv.asi` / `openrpf.asi`) are never installed — they cause
   compatibility issues and crashes.
