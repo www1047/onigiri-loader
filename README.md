@@ -129,8 +129,9 @@ authors.
 
 ## Getting started
 
-1. **Extract** the release zip to any folder (e.g. your Games folder).
-2. **Run** `OnigiriLoader\OnigiriLoader.exe`. A UAC prompt appears — the app
+1. **Extract** the release zip into a folder of its own
+   (e.g. `C:\Games\OnigiriLoader`).
+2. **Run** `OnigiriLoader.exe`. A UAC prompt appears — the app
    is requesting permission to write into your game folder (declining it only
    matters if your game is in a protected location such as Program Files).
 3. **Point it at the game** — **Scan** searches your drives for GTA V

@@ -21,12 +21,12 @@ and run.
 ## 2. Install
 
 1. Download `OnigiriLoader-win64.zip` (link from the release page / forum post).
-2. **Extract it to a permanent location** — e.g. `C:\Games\OnigiriLoader`,
+2. **Extract it into a folder of its own** — e.g. `C:\Games\OnigiriLoader`,
    or anywhere next to your games. Do not leave it in *Downloads*.
    - No admin rights are needed for this, and it should **not** live in
      Program Files.
 3. That is the complete install — no setup wizard, and nothing is written to the registry.
-4. *Optional:* right-click `OnigiriLoader\OnigiriLoader.exe` →
+4. *Optional:* right-click `OnigiriLoader.exe` →
    **Send to → Desktop (create shortcut)**.
 
 ## 3. First launch
@@ -110,6 +110,6 @@ That is the complete footprint — nothing else was changed on the system.
 
 | Location | What's in it |
 |---|---|
-| The folder you extracted | the app: `OnigiriLoader\OnigiriLoader.exe` + `_internal\`, plus the READMEs |
+| The folder you extracted | the app: `OnigiriLoader.exe` + `_internal\`, plus the READMEs |
 | `%APPDATA%\OnigiriLoader` | everything the app stores: `library\` (your mods), `backup\`, `base\` (saved originals), `merged\`, `state.json` |
 | Your game folder | `onigiri\` (mod content), core files next to `GTA5_Enhanced.exe`, `scripts\` (.NET scripts) |
