@@ -82,12 +82,12 @@ takes everything back out cleanly when you switch mods off.
 
 ## How it works
 
-Mods for GTA V Enhanced live in exactly two places, and the loader knows both
-by heart:
+Mods for GTA V Enhanced end up in a few well-defined places, and the loader
+knows them all by heart:
 
-- **The game root** — next to `GTA5_Enhanced.exe`: the ASI loader, `.asi`
-  plugins (with their `.ini` files), the input DLL, and `scripts\` for
-  `.NET` scripts.
+- **Next to the game exe** — the ASI loader, `.asi` plugins (with their
+  `.ini` files), and the input DLL.
+- **`scripts\`** — `.NET` scripts and their config files.
 - **`onigiri\`** — the mod content: `common\` (gameplay data such as weather,
   effects and timecycle), `platform\` (graphics and engine data), and
   `dlcpacks\` (additions the game loads on top of the world).
