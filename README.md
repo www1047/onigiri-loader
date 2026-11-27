@@ -8,6 +8,10 @@ takes everything back out cleanly when you switch mods off.
 > **Single player only.** Anything you load with this can be seen by GTA
 > Online's anti-cheat and risks a ban. Use it for offline play only.
 
+## Download
+
+**v0.5.0** — [OnigiriLoader-win64.zip](https://github.com/www1047/onigiri-loader/releases/download/v0.5.0/OnigiriLoader-win64.zip) · [all releases](https://github.com/www1047/onigiri-loader/releases)
+
 ---
 
 ## What it does
