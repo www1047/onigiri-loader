@@ -80,6 +80,26 @@ takes everything back out cleanly when you switch mods off.
   anything to the game beyond placing mod files.
 - **Windows only.** The app is a Windows program.
 
+## How it works
+
+Mods for GTA V Enhanced live in exactly two places, and the loader knows both
+by heart:
+
+- **The game root** — next to `GTA5_Enhanced.exe`: the ASI loader, `.asi`
+  plugins (with their `.ini` files), the input DLL, and `scripts\` for
+  `.NET` scripts.
+- **`onigiri\`** — the mod content: `common\` (gameplay data such as weather,
+  effects and timecycle), `platform\` (graphics and engine data), and
+  `dlcpacks\` (additions the game loads on top of the world).
+
+Enable a mod and its files are copied to the right place; disable it and they
+come back out, with whatever they replaced restored from the loader's private
+backups. Text files that several mods edit are three-way merged using the
+files already in your onigiri folder as the baseline; where a merge isn't
+possible, the mod lower in your list wins. Every action is written to the
+activity log in plain English, and your whole setup — mods, order, settings —
+is kept in `%APPDATA%\OnigiriLoader` and survives restarts.
+
 ## Requirements
 
 | | |
@@ -88,20 +108,64 @@ takes everything back out cleanly when you switch mods off.
 | **Recommended** | NaturalVision Enhanced as your baseline (or the stock-GTA V core-file setup) |
 | **Optional** | 7-Zip or WinRAR (free) to install `.7z`/`.rar` mods · ScriptHookVDotNet if a mod uses `.NET` scripts |
 
+## Lay the foundation (pick one)
+
+The loader manages mods; the engine that loads them comes from one of two
+setups. Both are fully supported:
+
+1. **NaturalVision Enhanced (recommended).** Add your NVE archive with
+   **Add archive**, name it, and tick it. That installs the `onigiri` folder
+   and core files, and every other mod you add sits on top of it.
+2. **Stock GTA V + core files.** No NVE? Use **Install core files** to copy
+   the core set — `onigiri.asi`, `nve.asi`, `xinput1_4.dll`, and
+   `ScriptHookV.dll` if your mods use `.asi` plugins. The loader creates the
+   skeleton `onigiri\` folder automatically the first time a mod is enabled.
+
+[INSTALL.md](INSTALL.md) has the full walkthrough;
+[MOD_COMPATIBILITY.md](MOD_COMPATIBILITY.md) explains the layout for mod
+authors.
+
 ## Getting started
 
-1. Extract the zip to any folder (e.g. your Games folder).
-2. Run `OnigiriLoader\OnigiriLoader.exe`. A UAC prompt appears on launch —
-   that's the app asking permission to write into your game folder (declining
-   it only matters if your game is in a protected location like Program Files).
-3. Click **Scan** (it looks for GTA V Enhanced and the core files), or
-   **Browse...** to pick the folder yourself.
-4. Click **Add archive**, choose a mod's `.zip` / `.7z` / `.rar` (or a
-   `.rpf`), and give it a name.
-5. **Tick** the mod to enable it. Read the activity log — it tells you what
-   was deployed, merged, skipped, or flagged.
-6. Play. To take a mod back out, untick it (originals are restored) or use
-   **Remove** to also drop it from the library.
+1. **Extract** the release zip to any folder (e.g. your Games folder).
+2. **Run** `OnigiriLoader\OnigiriLoader.exe`. A UAC prompt appears — that's
+   the app asking permission to write into your game folder (declining it
+   only matters if your game is in a protected location like Program Files).
+3. **Point it at the game** — **Scan** searches your drives for GTA V
+   Enhanced and the core files, or **Browse...** picks the folder that
+   contains `GTA5_Enhanced.exe`. The `onigiri\` folder is set next to the
+   exe automatically.
+4. **Check the core-files row** — green ✓ = present, red ✗ = missing. If
+   anything is missing, use **Install core files** and pick the files you
+   have (from your NVE download, or the stock-GTA V core set).
+5. **Lay the foundation** (above): add your NVE archive and tick it, or
+   install the core-file set for stock GTA V.
+6. **Add mods** with **Add archive** (`.zip` / `.7z` / `.rar`, or a single
+   `.rpf` DLC pack), give each a name, and **tick** it to enable it
+   (double-clicking a row works too).
+7. **Read the activity log** at the bottom of the window — every deploy,
+   merge, skip, and flag is written there in plain English.
+8. **Play offline.** To take a mod back out, untick it (your originals are
+   restored); **Remove** also drops it from the library.
+
+## Buttons at a glance
+
+| Button | What it does |
+|---|---|
+| **Scan** | Searches your drives for GTA V Enhanced and the core files |
+| **Browse...** | Pick the game folder yourself |
+| **Add archive** | Install a mod from a `.zip` / `.7z` / `.rar`, or a single `.rpf` file — the loader works out where each file goes |
+| **Enable / Disable** | Install the selected mod's files, or remove them and restore anything they replaced (double-clicking a row does the same) |
+| **Move up / Move down** | Change priority — where two mods edit the same lines, the mod lower in the list wins |
+| **Remove** | Uninstall the selected mod and drop it from the library |
+| **Re-apply** | Redeploy every enabled mod now — use it after changing folders or editing the library by hand |
+| **Install core files** | Copy `onigiri.asi`, `ScriptHookV.dll`, or the ASI loader (`xinput1_4.dll`) next to the exe; if both `dinput8.dll` and `xinput1_4.dll` are selected, only the Enhanced one goes in |
+| **Folder guide** | Show the folder layout mods should follow |
+| **Open onigiri folder** | Open `onigiri\` in File Explorer |
+| **View README** | Read the selected mod's README and see which folders the loader found in it |
+| **Open base folder** | Open the saved original files (the merge baseline) |
+| **DLC packs** | Show every DLC pack, whether it's listed in `dlclist.xml`, and any conflicts — with one-click fixes |
+| **Reset all** | Unload every mod (restoring originals), delete the library and backups, fresh first-time state — asks "Are you sure?", and can't be undone |
 
 ## Uninstalling
 
@@ -136,3 +200,19 @@ root. The "Folder guide" button shows the full layout.
 **I installed the wrong thing / it's all a mess.** Untick everything, or use
 **Reset all** (it asks "Are you sure?") to restore the originals and start
 fresh.
+
+**Can I install NaturalVision Enhanced with this?** Yes — exactly like any
+other mod: **Add archive**, name it, tick it. The core files and the
+`onigiri` folder get placed, and everything else you add sits on top of it.
+
+**Are my saves touched?** No. The loader only adds and removes mod files in
+your game folder; saves, the game exe, and system files are never modified.
+
+**Where are the backups?** In `%APPDATA%\OnigiriLoader\` — `backup\` holds
+whatever a mod overwrote (restored when you disable or remove the mod) and
+`base\` holds the original files used as the merge baseline. **Open base
+folder** shows them.
+
+**Will any mod work?** Any mod that follows the onigiri layout — that's what
+the loader is built for. Files it can't place are reported in the log rather
+than guessed at, and mods shipped as OpenIV `.oiv` packages aren't supported.
