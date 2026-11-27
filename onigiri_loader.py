@@ -43,6 +43,8 @@ import zipfile
 import zlib
 from pathlib import Path
 
+__version__ = "0.5.0"            # build version (also embedded in the .exe via version_info.txt)
+
 APP_DIR = Path(os.environ.get("APPDATA", str(Path.home()))) / "OnigiriLoader"
 LIB_DIR = APP_DIR / "library"
 BACKUP_DIR = APP_DIR / "backup"
@@ -2117,7 +2119,7 @@ def run_gui():
     from tkinter import ttk, filedialog, messagebox, simpledialog
 
     root = tk.Tk()
-    root.title("Onigiri Loader - GTA V")
+    root.title(f"Onigiri Loader {__version__} - GTA V")
     root.geometry("1180x660")
     try:
         root.iconphoto(True, tk.PhotoImage(data=ICON_B64))
@@ -2154,6 +2156,7 @@ def run_gui():
         root.update_idletasks()
 
     L = Loader(log)
+    log(f"Onigiri Loader {__version__} - mods are for single player only.")
     Tooltip, TreeTip = make_tooltip_classes(tk, lambda: THEME)
 
     # --- theme (dark by default; the switch is remembered) ------------------------
