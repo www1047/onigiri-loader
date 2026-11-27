@@ -12,7 +12,7 @@ and run.
 
 | | |
 |---|---|
-| **Required** | Windows 10/11 · GTA V Enhanced (the folder containing `GTA5_Enhanced.exe`) |
+| **Required** | Windows 10/11 · GTA V Enhanced (the folder containing `GTA5_Enhanced.exe`) · `ScriptHookV.dll` (the `.asi` plugin engine) |
 | **Recommended** | NaturalVision Enhanced as your baseline — or the stock-GTA V setup (core files + the skeleton onigiri folder the loader creates) |
 | **Optional** | 7-Zip or WinRAR (free, 7-zip.org) to install `.7z`/`.rar` mods · ScriptHookVDotNet if a mod uses `.NET` scripts |
 
@@ -47,8 +47,8 @@ and run.
      both `dinput8.dll` and `xinput1_4.dll`, only the Enhanced one is
      installed.
    - If nothing is present and you're starting from stock GTA V: install
-     `onigiri.asi`, `nve.asi`, `xinput1_4.dll` (and `ScriptHookV.dll` if your
-     mods use `.asi` plugins) — the loader creates the onigiri skeleton
+     `onigiri.asi`, `nve.asi`, `xinput1_4.dll`, and `ScriptHookV.dll`
+     (required for `.asi` plugins) — the loader creates the onigiri skeleton
      folder automatically the first time a mod is enabled.
 5. Done. The app remembers your game folder, mods, and settings between runs.
 

@@ -104,7 +104,7 @@ is kept in `%APPDATA%\OnigiriLoader` and survives restarts.
 
 | | |
 |---|---|
-| **Required** | Windows 10/11 · GTA V Enhanced (the folder containing `GTA5_Enhanced.exe`) |
+| **Required** | Windows 10/11 · GTA V Enhanced (the folder containing `GTA5_Enhanced.exe`) · `ScriptHookV.dll` (the `.asi` plugin engine) |
 | **Recommended** | NaturalVision Enhanced as your baseline (or the stock-GTA V core-file setup) |
 | **Optional** | 7-Zip or WinRAR (free) to install `.7z`/`.rar` mods · ScriptHookVDotNet if a mod uses `.NET` scripts |
 
@@ -118,7 +118,7 @@ setups. Both are fully supported:
    and core files, and every other mod you add sits on top of it.
 2. **Stock GTA V + core files.** No NVE? Use **Install core files** to copy
    the core set — `onigiri.asi`, `nve.asi`, `xinput1_4.dll`, and
-   `ScriptHookV.dll` if your mods use `.asi` plugins. The loader creates the
+   `ScriptHookV.dll` (required for `.asi` plugins). The loader creates the
    skeleton `onigiri\` folder automatically the first time a mod is enabled.
 
 [INSTALL.md](INSTALL.md) has the full walkthrough;

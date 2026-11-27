@@ -176,7 +176,7 @@ and show the status of:
 |---|---|
 | `onigiri.asi` | redirects the game to the onigiri folder |
 | `nve.asi` | the NaturalVision Enhanced engine plugin (game root) — part of the NVE baseline or the stock-GTA V foundation |
-| `ScriptHookV.dll` | lets `.asi` plugins run |
+| `ScriptHookV.dll` | the `.asi` plugin engine — required for `.asi` plugins to run |
 | `xinput1_4.dll` | the Enhanced ASI loader — the loader installs this one, never `dinput8.dll` |
 | `ScriptHookVDotNet.asi` | optional — required for .NET scripts in `scripts\` |
 
