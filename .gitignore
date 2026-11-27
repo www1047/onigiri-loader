@@ -1,0 +1,13 @@
+# Python
+__pycache__/
+*.pyc
+
+# PyInstaller build artifacts
+build/
+dist/
+
+# Release packages (published via GitHub Releases, not in the repo)
+*.zip
+
+# Session artifacts
+share.html
