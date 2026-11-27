@@ -6,7 +6,7 @@ Onigiri Loader is a mod manager for **GTA V Enhanced (single player)** built aro
 NaturalVision Enhanced `onigiri` folder layout. Mods are added as archives
 (`.zip`, `.7z`, `.rar`, or a single `.rpf`), kept in a private library, and deployed
 into the game folder when enabled. This document describes the rules the loader applies
-and how to structure your mod so it works first time.
+and how to structure your mod so it works the first time.
 
 Mods sit on top of an **onigiri foundation** — either a NaturalVision Enhanced (NVE)
 install (the usual baseline) or a stock-GTA V setup of core files plus a skeleton
@@ -142,17 +142,17 @@ Tips:
 The loader runs many mods side by side:
 
 - Files that several mods edit are **three-way merged** (the existing onigiri file
-  is the baseline). Where a merge cannot be resolved, **the mod lower in the
-  list wins**.
+  is the baseline). Where a merge cannot be resolved, **the lower mod in the
+  list takes precedence**.
 - Best practice:
   - **Add new files** rather than editing shared ones where possible
     (a new texture in its own folder beats editing a shared material).
   - Keep edits to shared text files **small and localised** — they merge cleanly
     and are easy to resolve.
-  - Don't ship modified copies of core onigiri files unless your mod genuinely
+  - Do not ship modified copies of core onigiri files unless your mod genuinely
     requires them.
   - If your mod is known to conflict with another, document the recommended
-    list order (lower = wins).
+    list order (the lower position takes precedence).
 
 ## 8. The onigiri foundation and core files
 

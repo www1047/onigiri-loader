@@ -22,10 +22,10 @@ and run.
 
 1. Download `OnigiriLoader-win64.zip` (link from the release page / forum post).
 2. **Extract it to a permanent location** — e.g. `C:\Games\OnigiriLoader`,
-   or anywhere next to your games. Don't leave it in *Downloads*.
+   or anywhere next to your games. Do not leave it in *Downloads*.
    - No admin rights are needed for this, and it should **not** live in
      Program Files.
-3. That's the whole install — no setup wizard, nothing written to the registry.
+3. That is the complete install — no setup wizard, and nothing is written to the registry.
 4. *Optional:* right-click `OnigiriLoader\OnigiriLoader.exe` →
    **Send to → Desktop (create shortcut)**.
 
@@ -50,7 +50,7 @@ and run.
      `onigiri.asi`, `nve.asi`, `xinput1_4.dll`, and `ScriptHookV.dll`
      (required for `.asi` plugins) — the loader creates the onigiri skeleton
      folder automatically the first time a mod is enabled.
-5. Done. The app remembers your game folder, mods, and settings between runs.
+5. That is all. The app retains your game folder, mods, and settings between runs.
 
 ## 4. Install your first mod
 
@@ -61,22 +61,22 @@ and run.
    merged, skipped, or flagged.
 4. Launch the game (offline) and check your mod.
 
-## 5. Everyday use — button cheat sheet
+## 5. Everyday use — button reference
 
 | Button | What it does |
 |---|---|
 | **Add archive** | Add a mod from a `.zip` / `.7z` / `.rar` archive or a `.rpf` |
 | **Enable / Disable** | Install or remove the selected mod's files (originals restored) |
-| **Move up / Move down** | Change priority — when two mods conflict, the one **lower** wins |
-| **Remove** | Uninstall the selected mod and drop it from the library |
-| **Re-apply** | Redeploy all enabled mods (after changing folders by hand) |
+| **Move up / Move down** | Change priority — when two mods conflict, the **lower** mod takes precedence |
+| **Remove** | Uninstall the selected mod and remove it from the library |
+| **Re-apply** | Redeploy all enabled mods (after changing folders manually) |
 | **Install core files** | Copy core files next to the game exe |
 | **Folder guide** | Show the mod folder layout the loader expects |
 | **View README** | Read the selected mod's README + the folders the loader found in it |
 | **DLC packs** | Your packs, their `dlclist.xml` status, load order, conflicts + fixes |
 | **Open onigiri folder** | Open the onigiri folder in File Explorer |
 | **Open base folder** | Show the saved original files (merge baselines) |
-| **Reset all** | Unload everything, restore originals, wipe library & settings — with an "Are you sure?" prompt |
+| **Reset all** | Unload all mods, restore the original files, and clear the library and settings — with an "Are you sure?" confirmation |
 
 ## 6. Updating the app
 
@@ -88,28 +88,28 @@ and run.
 
 ## 7. Uninstalling
 
-1. **Untick or Remove** the mods you no longer want — this restores the
+1. **Disable or Remove** the mods you no longer want — this restores the
    original game files.
 2. Delete the `OnigiriLoader` folder you extracted.
 3. Delete `%APPDATA%\OnigiriLoader` (Win+R → `%APPDATA%` → `OnigiriLoader`).
 
-That's the complete footprint — nothing else was changed on your system.
+That is the complete footprint — nothing else was changed on the system.
 
 ## 8. Troubleshooting
 
 | Problem | Fix |
 |---|---|
-| UAC declined, or files won't save | Accept the UAC prompt, or move the game out of a protected folder (e.g. Program Files) |
-| `.7z` / `.rar` won't open | Install 7-Zip or WinRAR (free) — the app uses whichever you have |
-| `.NET` script mod does nothing | Install the ScriptHookVDotNet (Enhanced) package — the log warns you when it's missing |
+| UAC declined, or files will not save | Accept the UAC prompt, or move the game out of a protected folder (e.g. Program Files) |
+| `.7z` / `.rar` will not open | Install 7-Zip or WinRAR (free) — the app uses whichever you have |
+| `.NET` script mod does nothing | Install the ScriptHookVDotNet (Enhanced) package — the log warns you when it is missing |
 | Mod is ticked but nothing happens | Read the log for skips/warnings, try **Re-apply**, and confirm the mod targets the Enhanced game |
-| Weird visuals or a crash | Untick the most recently enabled mod; open **DLC packs** to check for conflicting packs |
-| Everything is a mess | **Reset all** (asks "Are you sure?") restores the originals and starts fresh, then add one mod at a time |
+| Unusual visuals or a crash | Disable the most recently enabled mod; open **DLC packs** to check for conflicting packs |
+| The setup is not working | **Reset all** (with an "Are you sure?" confirmation) restores the original files and starts fresh; then add one mod at a time |
 
-## 9. Where things live
+## 9. File locations
 
 | Location | What's in it |
 |---|---|
 | The folder you extracted | the app: `OnigiriLoader\OnigiriLoader.exe` + `_internal\`, plus the READMEs |
-| `%APPDATA%\OnigiriLoader` | everything the app remembers: `library\` (your mods), `backup\`, `base\` (saved originals), `merged\`, `state.json` |
+| `%APPDATA%\OnigiriLoader` | everything the app stores: `library\` (your mods), `backup\`, `base\` (saved originals), `merged\`, `state.json` |
 | Your game folder | `onigiri\` (mod content), core files next to `GTA5_Enhanced.exe`, `scripts\` (.NET scripts) |
